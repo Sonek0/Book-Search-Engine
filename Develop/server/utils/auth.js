@@ -29,7 +29,7 @@ module.exports = {
     }
 
     // returns the required
-    return(req);
+    return req;
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
