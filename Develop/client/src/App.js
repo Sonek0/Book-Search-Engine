@@ -30,6 +30,12 @@ const authLink = setContext((_, {headers}) => {
   };
 });
 
+const client = new ApolloClient({
+  //set up client to execute the 'auth link' middleware
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+})
+
 function App() {
   return (
     <Router>
